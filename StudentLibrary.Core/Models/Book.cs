@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Core.Models
 {
-    internal class Book
+    public class Book
     {
+        public int Id { get; set; }
+        public int IsbnNo { get; set; }
+        public string Name { get; set; }
+        public int Page { get; set; }
+
+        public int AuthorId { get; set; }
+        public int CategoryId { get; set; }
+
+        public Author Author { get; set; }
+        public ICollection<Operation> Operations { get; set; }
+
     }
 }
