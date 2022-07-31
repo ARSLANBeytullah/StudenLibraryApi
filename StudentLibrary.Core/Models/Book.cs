@@ -13,9 +13,6 @@ namespace StudentLibrary.Core.Models
         public string Name { get; set; }
         public int Page { get; set; }
 
-        public int AuthorId { get; set; }
-        public int CategoryId { get; set; }
-
         public Author Author { get; set; }
         public ICollection<Operation> Operations { get; set; }
 
