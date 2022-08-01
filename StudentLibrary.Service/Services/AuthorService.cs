@@ -14,8 +14,8 @@ namespace StudentLibrary.Service.Services
 {
     public class AuthorService : IAuthorService
     {
-        IUnitOfWork _unitOfWork;
-        IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         public AuthorService(IUnitOfWork unitOfWork, IMapper mapper)
         {
