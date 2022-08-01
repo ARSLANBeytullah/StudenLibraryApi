@@ -20,6 +20,10 @@ namespace StudentLibrary.Service.Mapping
             CreateMap<StudentDto, Student>().ReverseMap();
             CreateMap<StudentUpdateDto, Student>();
             CreateMap<StudentAddDto, Student>();
+
+            CreateMap<OperationDto, Operation>().ReverseMap();
+            CreateMap<OperationUpdateDto, Operation>();
+            CreateMap<OperationAddDto, Operation>();
         }
     }
 }

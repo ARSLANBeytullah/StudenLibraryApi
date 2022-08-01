@@ -12,7 +12,7 @@ namespace StudentLibrary.Core.Services
     {
         Task<OperationDto> GetByIdAsync(int id);
         Task<IList<OperationDto>> GetAllAsync();
-        Task AddAsync(OperationAddDto entitiy);
+        Task AddAsync(OperationAddDto entity);
         Task UpdateAsync(OperationUpdateDto entity);
         Task DeleteAsync(OperationDto entity);
         Task<int> CountAsync(Expression<Func<OperationDto, bool>> predicate);

@@ -53,7 +53,6 @@ namespace StudentLibrary.Service.Services
         public async Task UpdateAsync(StudentUpdateDto entity)
         {
             await _unitOfWork.Students.UpdateAsync(_mapper.Map<Student>(entity));
-
             await _unitOfWork.SaveAsync();
         }
     }
