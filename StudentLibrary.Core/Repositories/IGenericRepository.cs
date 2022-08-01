@@ -16,6 +16,5 @@ namespace StudentLibrary.Core.Repositories
         Task UpdateAsync(T entity);
         Task<int> CountAsync(Expression<Func<T, bool>> predicate);
         Task<bool> AnyAsnc(Expression<Func<T, bool>> predicate);
-
     }
 }
