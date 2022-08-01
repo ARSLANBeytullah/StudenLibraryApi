@@ -12,10 +12,10 @@ namespace StudentLibrary.Core.Services
     {
         Task<AuthorDto> GetByIdAsync(int id);
         Task<IList<AuthorDto>> GetAllAsync();
-        Task AddAsync(AuthorAddDto entitiy);
+        Task AddAsync(AuthorAddDto entity);
         Task UpdateAsync(AuthorUpdateDto entity);
         Task DeleteAsync(AuthorDto entity);
         Task<int> CountAsync(Expression<Func<AuthorDto, bool>> predicate);
-        Task<bool> AnyAsnc(Expression<Func<AuthorDto, bool>> predicate);
+        // Task<bool> AnyAysnc(Expression<Func<AuthorDto, bool>> predicate);
     }
 }

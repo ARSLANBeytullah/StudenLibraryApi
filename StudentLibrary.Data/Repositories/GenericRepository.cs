@@ -28,10 +28,9 @@ namespace StudentLibrary.Data.Repositories
             return await _context.Set<T>().AnyAsync(predicate);
         }
 
-        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate)
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate=null)
         {
-            return await _context.Set<T>().CountAsync(predicate);
-
+            return await (predicate == null ? _context.Set<T>().CountAsync() : _context.Set<T>().CountAsync(predicate));
         }
 
         public async Task DeleteAsync(T entity)
