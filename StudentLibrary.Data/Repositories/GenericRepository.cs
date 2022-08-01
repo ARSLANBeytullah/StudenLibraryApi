@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentLibrary.Core.Repositories;
+using StudentLibrary.Data.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace StudentLibrary.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly DbContext _context;
-        public GenericRepository(DbContext context)
+        private readonly StudentLibraryContext _context;
+        public GenericRepository(StudentLibraryContext context)
         {
             _context = context;
         }

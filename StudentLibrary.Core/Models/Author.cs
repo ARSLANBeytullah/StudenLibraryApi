@@ -12,7 +12,7 @@ namespace StudentLibrary.Core.Models
         public string Name { get; set; }
         public string Surname { get; set; }
        
-        public ICollection<Book> Books { get; set; }
+        public ICollection<Book> Books { get; set; } //Navigation Property
        
     }
 }

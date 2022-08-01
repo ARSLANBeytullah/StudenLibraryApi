@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentLibrary.Core.Models;
 using StudentLibrary.Core.Repositories;
+using StudentLibrary.Data.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace StudentLibrary.Data.Repositories
 {
     public class AuthorRepository : GenericRepository<Author>, IAuthorRepository
     {
-        public AuthorRepository(DbContext dbContext) : base(dbContext)
+        public AuthorRepository(StudentLibraryContext dbContext) : base(dbContext)
         {
+
         }
     }
 }
