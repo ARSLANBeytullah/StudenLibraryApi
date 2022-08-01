@@ -7,6 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StudentLibrary.Core.Services;
+using StudentLibrary.Core.UnitOfWorks;
+using StudentLibrary.Data.Contexts;
+using StudentLibrary.Data.UnitOfWork;
+using StudentLibrary.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +21,6 @@ namespace StudentLibrary.Api
 {
     public class Startup
     {
-
-
 
         public Startup(IConfiguration configuration)
         {
@@ -29,7 +32,12 @@ namespace StudentLibrary.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddDbContext<StudentLibraryContext>();
+            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IOperationService, OperationService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

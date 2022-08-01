@@ -19,7 +19,7 @@ namespace StudentLibrary.Data.Contexts
         public DbSet<Book> Books { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Operation> Operations { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //Code Refactoring gerekebilir.
         {
             modelBuilder.ApplyConfiguration(new AuthorConfiguration());
             modelBuilder.ApplyConfiguration(new BookConfiguration());

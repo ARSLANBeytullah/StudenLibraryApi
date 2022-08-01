@@ -25,6 +25,9 @@ namespace StudentLibrary.Service.Mapping
             CreateMap<OperationDto, Operation>().ReverseMap();
             CreateMap<OperationUpdateDto, Operation>();
             CreateMap<OperationAddDto, Operation>();
+
+
+           
         }
     }
 }
