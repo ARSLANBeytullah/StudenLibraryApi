@@ -11,7 +11,8 @@ namespace StudentLibrary.Service.Mapping
 {
     internal class MapProfile : Profile
     {
-        public MapProfile()
+        public MapProfile()  //Code Refactoring yapılacak. AuthorMapping,StudentMapping vs. sınıfları oluşturulup ilgili entity'nin ilgili kodları kendi sınıfına yazılacak.
+                      
         {
             CreateMap<AuthorAddDto, Author>();
             CreateMap<AuthorDto, Author>().ReverseMap();

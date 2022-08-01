@@ -12,7 +12,7 @@ namespace StudentLibrary.Core.Services
     {
         Task<BookDto> GetByIdAsync(int id);
         Task<IList<BookDto>> GetAllAsync();
-        Task AddAsync(BookAddDto entitiy);
+        Task AddAsync(BookAddDto entity);
         Task UpdateAsync(BookUpdateDto entity);
         Task DeleteAsync(BookDto entity);
         Task<int> CountAsync(Expression<Func<BookDto, bool>> predicate);

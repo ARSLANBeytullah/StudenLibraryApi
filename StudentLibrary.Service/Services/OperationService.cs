@@ -14,8 +14,8 @@ namespace StudentLibrary.Service.Services
 {
     public class OperationService : IOperationService
     {
-        IUnitOfWork _unitOfWork;
-        IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         public OperationService(IUnitOfWork unitOfWork, IMapper mapper)
         {
