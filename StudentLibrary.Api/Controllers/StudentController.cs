@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class StudentController : ControllerBase
     {
@@ -29,7 +29,7 @@ namespace StudentLibrary.Api.Controllers
             var student = await _studentService.GetByIdAsync(id);
             return Ok(student);
         }
-
+        
         public async Task<IActionResult> Count()
         {
             int count = await _studentService.CountAsync();
