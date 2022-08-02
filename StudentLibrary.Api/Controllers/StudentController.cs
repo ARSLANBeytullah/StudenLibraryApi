@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StudentLibrary.Core.Dtos;
 using StudentLibrary.Core.Services;
 using System.Threading.Tasks;
 
@@ -33,7 +34,29 @@ namespace StudentLibrary.Api.Controllers
         {
             int count = await _studentService.CountAsync();
             return Ok(count);
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> Create(StudentAddDto studentAddDto)
+        {
+            await _studentService.AddAsync(studentAddDto);
+            return Created(string.Empty, studentAddDto);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(StudentUpdateDto studentUpdateDto)
+        {
+            await _studentService.UpdateAsync(studentUpdateDto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+
+            await _studentService.DeleteAsync(id);
+            return NoContent();
         }
     }
+
 }
