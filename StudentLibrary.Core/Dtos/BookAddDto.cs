@@ -14,7 +14,7 @@ namespace StudentLibrary.Core.Dtos
         public int Page { get; set; }
 
 
-        public Author Author { get; set; }
+        public AuthorDto Author { get; set; }
 
     }
 }

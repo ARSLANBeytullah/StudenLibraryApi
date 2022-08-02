@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/action")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        IAuthorService _authorService;
+        private readonly IAuthorService _authorService;
 
         public AuthorController(IAuthorService authorService)
         {
@@ -34,7 +34,7 @@ namespace StudentLibrary.Api.Controllers
             await _authorService.AddAsync(authorAddDto);
             return Created(string.Empty, authorAddDto);
         }
-        [Route("api/author/count")]
+        
         public async Task<IActionResult> Count()
         {
             int count = await _authorService.CountAsync();
@@ -42,7 +42,7 @@ namespace StudentLibrary.Api.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Update(AuthorUpdateDto authorUpdateDto)
         {
             await _authorService.UpdateAsync(authorUpdateDto);

@@ -33,7 +33,8 @@ namespace StudentLibrary.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<StudentLibraryContext>();
             services.AddScoped<IAuthorService, AuthorService>();
@@ -62,14 +63,14 @@ namespace StudentLibrary.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseHttpsRedirection();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 //endpoints.MapControllers();
-                //endpoints.MapDefaultControllerRoute();
-                endpoints.MapControllerRoute("Route", "api/{controller}/{action}/{id?}");
+                 endpoints.MapDefaultControllerRoute();
+                //endpoints.MapControllerRoute("Route", "api/{controller}/{action}/{id?}");
             });
         }
     }
