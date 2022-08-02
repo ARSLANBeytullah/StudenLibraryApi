@@ -33,9 +33,11 @@ namespace StudentLibrary.Data.Repositories
             return await (predicate == null ? _context.Set<T>().CountAsync() : _context.Set<T>().CountAsync(predicate));
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(int id)
         {
-            await Task.Run(() => { _context.Set<T>().Remove(entity); });
+            //await Task.Run( ()=> { _context.Set<T>().Remove(entity); });
+            var deletedEntity = await _context.Set<T>().FindAsync(id); 
+            _context.Set<T>().Remove(deletedEntity);
         }
 
         public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties)

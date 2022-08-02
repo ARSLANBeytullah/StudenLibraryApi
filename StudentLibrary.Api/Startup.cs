@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using StudentLibrary.Core.Services;
@@ -32,13 +33,16 @@ namespace StudentLibrary.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<StudentLibraryContext>();
             services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IOperationService, OperationService>();
-            services.AddControllers();
+            services.AddAutoMapper(typeof(MapProfile));
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StudentLibrary.Api", Version = "v1" });
@@ -64,7 +68,8 @@ namespace StudentLibrary.Api
             app.UseEndpoints(endpoints =>
             {
                 //endpoints.MapControllers();
-                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute("Route", "api/{controller}/{action}/{id?}");
             });
         }
     }
