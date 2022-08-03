@@ -42,7 +42,7 @@ namespace StudentLibrary.Api
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IOperationService, OperationService>();
-
+            services.Configure<ApiBehaviorOptions>(x => x.SuppressModelStateInvalidFilter = true);
 
             services.AddAutoMapper(typeof(MapProfile));
 
