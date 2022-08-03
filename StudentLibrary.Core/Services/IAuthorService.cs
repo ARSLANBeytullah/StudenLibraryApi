@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Core.Services
 {
-    public interface IAuthorService
+    public interface IAuthorService //IService interface'i oluşturulup IAuthorService ve diğer servisler, IService interface'inden kalıtım alabilir. Böylece daha temiz ve SOLID'e uygun kod yazmış oluruz.
+                                    //Code Refactoring yapılacak.
     {
         Task<AuthorDto> GetByIdAsync(int id);
         Task<IList<AuthorDto>> GetAllAsync();

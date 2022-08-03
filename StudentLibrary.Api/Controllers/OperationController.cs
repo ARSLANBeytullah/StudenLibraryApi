@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Api.Controllers
 {
-    [Route("api/[controller][Action]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class OperationController : ControllerBase
     {

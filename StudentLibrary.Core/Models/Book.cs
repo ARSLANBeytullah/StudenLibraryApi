@@ -9,7 +9,7 @@ namespace StudentLibrary.Core.Models
     public class Book
     {
         public int Id { get; set; }
-        public int IsbnNo { get; set; }
+        public int IsbnNo { get; set; } //Kitap numarası.
         public string Name { get; set; }
         public int Page { get; set; }
 

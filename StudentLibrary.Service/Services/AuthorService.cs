@@ -43,7 +43,7 @@ namespace StudentLibrary.Service.Services
 
         public async Task<IList<AuthorDto>> GetAllAsync()
         {
-            var authors = await _unitOfWork.Authors.GetAllAsync(null, a => a.Books);
+            var authors = await _unitOfWork.Authors.GetAllAsync(null, a => a.Books);//Author ile birlikte kitapları getirmemizi sağlar.
 
             return _mapper.Map<IList<AuthorDto>>(authors);
         }

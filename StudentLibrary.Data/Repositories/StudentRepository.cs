@@ -14,6 +14,7 @@ namespace StudentLibrary.Data.Repositories
     {
         public StudentRepository(StudentLibraryContext dbContext) : base(dbContext)
         {
-        }
+            
+        }   
     }
 }

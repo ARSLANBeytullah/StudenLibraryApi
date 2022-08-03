@@ -12,6 +12,7 @@ using StudentLibrary.Core.Services;
 using StudentLibrary.Core.UnitOfWorks;
 using StudentLibrary.Data.Contexts;
 using StudentLibrary.Data.UnitOfWork;
+using StudentLibrary.Service.Mapping;
 using StudentLibrary.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,10 @@ namespace StudentLibrary.Api
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IOperationService, OperationService>();
+
+
             services.AddAutoMapper(typeof(MapProfile));
+
 
 
             services.AddSwaggerGen(c =>

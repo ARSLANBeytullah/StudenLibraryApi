@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Service.Mapping
 {
-    internal class MapProfile : Profile
+    public class MapProfile : Profile
     {
         public MapProfile()  //Code Refactoring yapılacak. AuthorMapping,StudentMapping vs. sınıfları oluşturulup ilgili entity'nin ilgili kodları kendi sınıfına yazılacak.
                       
